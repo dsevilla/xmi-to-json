@@ -1,0 +1,272 @@
+{ "xmi:version" : "2.0" , "xmlns:xmi" : "http://www.omg.org/XMI" , "xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance" , "xmlns:ecore" : "http://www.eclipse.org/emf/2002/Ecore" , "name" : "ecore" , "nsURI" : "http://www.eclipse.org/emf/2002/Ecore" , "nsPrefix" : "ecore"
+,"eClassifiers" : [ { "xsi:type" : "ecore:EClass" , "name" : "EAttribute" , "eSuperTypes" : "ecore.ecore#//EStructuralFeature"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "iD" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAttributeType" , "lowerBound" : "1" , "eType" : "ecore:EClass ecore.ecore#//EDataType" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EAnnotation" , "eSuperTypes" : "ecore.ecore#//EModelElement"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "source" , "eType" : "ecore:EDataType ecore.ecore#//EString" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "details" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EStringToStringMapEntry" , "containment" : "true" , "resolveProxies" : "false" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eModelElement" , "eType" : "ecore:EClass ecore.ecore#//EModelElement" , "transient" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EModelElement/eAnnotations" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "contents" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EObject" , "containment" : "true" , "resolveProxies" : "false" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "references" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EObject" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EClass" , "eSuperTypes" : "ecore.ecore#//EClassifier"
+,"eOperations" : [ { "name" : "isSuperTypeOf" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean"
+,"eParameters" : [ { "name" : "someClass" , "eType" : "ecore:EClass ecore.ecore#//EClass" } ]  }
+,{ "name" : "getFeatureCount" , "eType" : "ecore:EDataType ecore.ecore#//EInt" }
+,{ "name" : "getEStructuralFeature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature"
+,"eParameters" : [ { "name" : "featureID" , "eType" : "ecore:EDataType ecore.ecore#//EInt" } ]  }
+,{ "name" : "getFeatureID" , "eType" : "ecore:EDataType ecore.ecore#//EInt"
+,"eParameters" : [ { "name" : "feature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" } ]  }
+,{ "name" : "getEStructuralFeature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature"
+,"eParameters" : [ { "name" : "featureName" , "eType" : "ecore:EDataType ecore.ecore#//EString" } ]  }
+,{ "name" : "getOperationCount" , "eType" : "ecore:EDataType ecore.ecore#//EInt" }
+,{ "name" : "getEOperation" , "eType" : "ecore:EClass ecore.ecore#//EOperation"
+,"eParameters" : [ { "name" : "operationID" , "eType" : "ecore:EDataType ecore.ecore#//EInt" } ]  }
+,{ "name" : "getOperationID" , "eType" : "ecore:EDataType ecore.ecore#//EInt"
+,"eParameters" : [ { "name" : "operation" , "eType" : "ecore:EClass ecore.ecore#//EOperation" } ]  }
+,{ "name" : "getOverride" , "eType" : "ecore:EClass ecore.ecore#//EOperation"
+,"eParameters" : [ { "name" : "operation" , "eType" : "ecore:EClass ecore.ecore#//EOperation" } ]  } ]
+
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "abstract" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "interface" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eSuperTypes" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EClass" , "unsettable" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eOperations" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EOperation" , "containment" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EOperation/eContainingClass" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAllAttributes" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EAttribute" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAllReferences" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EReference" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eReferences" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EReference" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAttributes" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EAttribute" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAllContainments" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EReference" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAllOperations" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EOperation" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAllStructuralFeatures" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAllSuperTypes" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EClass" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eIDAttribute" , "eType" : "ecore:EClass ecore.ecore#//EAttribute" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" , "resolveProxies" : "false" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eStructuralFeatures" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" , "containment" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EStructuralFeature/eContainingClass" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eGenericSuperTypes" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EGenericType" , "unsettable" : "true" , "containment" : "true" , "resolveProxies" : "false" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eAllGenericSuperTypes" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EGenericType" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EClassifier" , "abstract" : "true" , "eSuperTypes" : "ecore.ecore#//ENamedElement"
+,"eOperations" : [ { "name" : "isInstance" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean"
+,"eParameters" : [ { "name" : "object" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject" } ]  }
+,{ "name" : "getClassifierID" , "eType" : "ecore:EDataType ecore.ecore#//EInt" } ]
+
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "instanceClassName" , "eType" : "ecore:EDataType ecore.ecore#//EString" , "volatile" : "true" , "unsettable" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "instanceClass" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true"
+,"eGenericType" : [ { "eClassifier" : "ecore:EDataType ecore.ecore#//EJavaClass"
+,"eTypeArguments" : [ {  } ]  } ]  }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "defaultValue" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "instanceTypeName" , "eType" : "ecore:EDataType ecore.ecore#//EString" , "volatile" : "true" , "unsettable" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "ePackage" , "eType" : "ecore:EClass ecore.ecore#//EPackage" , "changeable" : "false" , "transient" : "true" , "eOpposite" : "ecore.ecore#//EPackage/eClassifiers" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eTypeParameters" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//ETypeParameter" , "containment" : "true" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EDataType" , "eSuperTypes" : "ecore.ecore#//EClassifier"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "serializable" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" , "defaultValueLiteral" : "true" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EEnum" , "eSuperTypes" : "ecore.ecore#//EDataType"
+,"eOperations" : [ { "name" : "getEEnumLiteral" , "eType" : "ecore:EClass ecore.ecore#//EEnumLiteral"
+,"eParameters" : [ { "name" : "name" , "eType" : "ecore:EDataType ecore.ecore#//EString" } ]  }
+,{ "name" : "getEEnumLiteral" , "eType" : "ecore:EClass ecore.ecore#//EEnumLiteral"
+,"eParameters" : [ { "name" : "value" , "eType" : "ecore:EDataType ecore.ecore#//EInt" } ]  }
+,{ "name" : "getEEnumLiteralByLiteral" , "eType" : "ecore:EClass ecore.ecore#//EEnumLiteral"
+,"eParameters" : [ { "name" : "literal" , "eType" : "ecore:EDataType ecore.ecore#//EString" } ]  } ]
+
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EReference" , "name" : "eLiterals" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EEnumLiteral" , "containment" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EEnumLiteral/eEnum" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EEnumLiteral" , "eSuperTypes" : "ecore.ecore#//ENamedElement"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "value" , "eType" : "ecore:EDataType ecore.ecore#//EInt" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "instance" , "eType" : "ecore:EDataType ecore.ecore#//EEnumerator" , "transient" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "literal" , "eType" : "ecore:EDataType ecore.ecore#//EString" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eEnum" , "eType" : "ecore:EClass ecore.ecore#//EEnum" , "changeable" : "false" , "transient" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EEnum/eLiterals" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EFactory" , "eSuperTypes" : "ecore.ecore#//EModelElement"
+,"eOperations" : [ { "name" : "create" , "eType" : "ecore:EClass ecore.ecore#//EObject"
+,"eParameters" : [ { "name" : "eClass" , "eType" : "ecore:EClass ecore.ecore#//EClass" } ]  }
+,{ "name" : "createFromString" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject"
+,"eParameters" : [ { "name" : "eDataType" , "eType" : "ecore:EClass ecore.ecore#//EDataType" }
+,{ "name" : "literalValue" , "eType" : "ecore:EDataType ecore.ecore#//EString" } ]  }
+,{ "name" : "convertToString" , "eType" : "ecore:EDataType ecore.ecore#//EString"
+,"eParameters" : [ { "name" : "eDataType" , "eType" : "ecore:EClass ecore.ecore#//EDataType" }
+,{ "name" : "instanceValue" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject" } ]  } ]
+
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EReference" , "name" : "ePackage" , "lowerBound" : "1" , "eType" : "ecore:EClass ecore.ecore#//EPackage" , "transient" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EPackage/eFactoryInstance" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EModelElement" , "abstract" : "true"
+,"eOperations" : [ { "name" : "getEAnnotation" , "eType" : "ecore:EClass ecore.ecore#//EAnnotation"
+,"eParameters" : [ { "name" : "source" , "eType" : "ecore:EDataType ecore.ecore#//EString" } ]  } ]
+
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EReference" , "name" : "eAnnotations" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EAnnotation" , "containment" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EAnnotation/eModelElement" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "ENamedElement" , "abstract" : "true" , "eSuperTypes" : "ecore.ecore#//EModelElement"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "name" , "eType" : "ecore:EDataType ecore.ecore#//EString" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EObject"
+,"eOperations" : [ { "name" : "eClass" , "eType" : "ecore:EClass ecore.ecore#//EClass" }
+,{ "name" : "eIsProxy" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "name" : "eResource" , "eType" : "ecore:EDataType ecore.ecore#//EResource" }
+,{ "name" : "eContainer" , "eType" : "ecore:EClass ecore.ecore#//EObject" }
+,{ "name" : "eContainingFeature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" }
+,{ "name" : "eContainmentFeature" , "eType" : "ecore:EClass ecore.ecore#//EReference" }
+,{ "name" : "eContents"
+,"eGenericType" : [ { "eClassifier" : "ecore:EDataType ecore.ecore#//EEList"
+,"eTypeArguments" : [ { "eClassifier" : "ecore:EClass ecore.ecore#//EObject" } ]  } ]  }
+,{ "name" : "eAllContents"
+,"eGenericType" : [ { "eClassifier" : "ecore:EDataType ecore.ecore#//ETreeIterator"
+,"eTypeArguments" : [ { "eClassifier" : "ecore:EClass ecore.ecore#//EObject" } ]  } ]  }
+,{ "name" : "eCrossReferences"
+,"eGenericType" : [ { "eClassifier" : "ecore:EDataType ecore.ecore#//EEList"
+,"eTypeArguments" : [ { "eClassifier" : "ecore:EClass ecore.ecore#//EObject" } ]  } ]  }
+,{ "name" : "eGet" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject"
+,"eParameters" : [ { "name" : "feature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" } ]  }
+,{ "name" : "eGet" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject"
+,"eParameters" : [ { "name" : "feature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" }
+,{ "name" : "resolve" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" } ]  }
+,{ "name" : "eSet"
+,"eParameters" : [ { "name" : "feature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" }
+,{ "name" : "newValue" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject" } ]  }
+,{ "name" : "eIsSet" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean"
+,"eParameters" : [ { "name" : "feature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" } ]  }
+,{ "name" : "eUnset"
+,"eParameters" : [ { "name" : "feature" , "eType" : "ecore:EClass ecore.ecore#//EStructuralFeature" } ]  }
+,{ "name" : "eInvoke" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject" , "eExceptions" : "ecore:EDataType ecore.ecore#//EInvocationTargetException"
+,"eParameters" : [ { "name" : "operation" , "eType" : "ecore:EClass ecore.ecore#//EOperation" }
+,{ "name" : "arguments"
+,"eGenericType" : [ { "eClassifier" : "ecore:EDataType ecore.ecore#//EEList"
+,"eTypeArguments" : [ {  } ]  } ]  } ]  } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EOperation" , "eSuperTypes" : "ecore.ecore#//ETypedElement"
+,"eOperations" : [ { "name" : "getOperationID" , "eType" : "ecore:EDataType ecore.ecore#//EInt" }
+,{ "name" : "isOverrideOf" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean"
+,"eParameters" : [ { "name" : "someOperation" , "eType" : "ecore:EClass ecore.ecore#//EOperation" } ]  } ]
+
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EReference" , "name" : "eContainingClass" , "eType" : "ecore:EClass ecore.ecore#//EClass" , "changeable" : "false" , "transient" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EClass/eOperations" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eTypeParameters" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//ETypeParameter" , "containment" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eParameters" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EParameter" , "containment" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EParameter/eOperation" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eExceptions" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EClassifier" , "unsettable" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eGenericExceptions" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EGenericType" , "unsettable" : "true" , "containment" : "true" , "resolveProxies" : "false" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EPackage" , "eSuperTypes" : "ecore.ecore#//ENamedElement"
+,"eOperations" : [ { "name" : "getEClassifier" , "eType" : "ecore:EClass ecore.ecore#//EClassifier"
+,"eParameters" : [ { "name" : "name" , "eType" : "ecore:EDataType ecore.ecore#//EString" } ]  } ]
+
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "nsURI" , "eType" : "ecore:EDataType ecore.ecore#//EString" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "nsPrefix" , "eType" : "ecore:EDataType ecore.ecore#//EString" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eFactoryInstance" , "lowerBound" : "1" , "eType" : "ecore:EClass ecore.ecore#//EFactory" , "transient" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EFactory/ePackage" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eClassifiers" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EClassifier" , "containment" : "true" , "eOpposite" : "ecore.ecore#//EClassifier/ePackage" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eSubpackages" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EPackage" , "containment" : "true" , "eOpposite" : "ecore.ecore#//EPackage/eSuperPackage" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eSuperPackage" , "eType" : "ecore:EClass ecore.ecore#//EPackage" , "changeable" : "false" , "transient" : "true" , "eOpposite" : "ecore.ecore#//EPackage/eSubpackages" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EParameter" , "eSuperTypes" : "ecore.ecore#//ETypedElement"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EReference" , "name" : "eOperation" , "eType" : "ecore:EClass ecore.ecore#//EOperation" , "changeable" : "false" , "transient" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EOperation/eParameters" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EReference" , "eSuperTypes" : "ecore.ecore#//EStructuralFeature"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "containment" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "container" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "resolveProxies" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" , "defaultValueLiteral" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eOpposite" , "eType" : "ecore:EClass ecore.ecore#//EReference" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eReferenceType" , "lowerBound" : "1" , "eType" : "ecore:EClass ecore.ecore#//EClass" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eKeys" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EAttribute" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EStructuralFeature" , "abstract" : "true" , "eSuperTypes" : "ecore.ecore#//ETypedElement"
+,"eOperations" : [ { "name" : "getFeatureID" , "eType" : "ecore:EDataType ecore.ecore#//EInt" }
+,{ "name" : "getContainerClass"
+,"eGenericType" : [ { "eClassifier" : "ecore:EDataType ecore.ecore#//EJavaClass"
+,"eTypeArguments" : [ {  } ]  } ]  } ]
+
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "changeable" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" , "defaultValueLiteral" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "volatile" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "transient" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "defaultValueLiteral" , "eType" : "ecore:EDataType ecore.ecore#//EString" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "defaultValue" , "eType" : "ecore:EDataType ecore.ecore#//EJavaObject" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "unsettable" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "derived" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eContainingClass" , "eType" : "ecore:EClass ecore.ecore#//EClass" , "changeable" : "false" , "transient" : "true" , "resolveProxies" : "false" , "eOpposite" : "ecore.ecore#//EClass/eStructuralFeatures" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "ETypedElement" , "abstract" : "true" , "eSuperTypes" : "ecore.ecore#//ENamedElement"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "ordered" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" , "defaultValueLiteral" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "unique" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" , "defaultValueLiteral" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "lowerBound" , "eType" : "ecore:EDataType ecore.ecore#//EInt" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "upperBound" , "eType" : "ecore:EDataType ecore.ecore#//EInt" , "defaultValueLiteral" : "1" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "many" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "required" , "eType" : "ecore:EDataType ecore.ecore#//EBoolean" , "changeable" : "false" , "volatile" : "true" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eType" , "eType" : "ecore:EClass ecore.ecore#//EClassifier" , "volatile" : "true" , "unsettable" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eGenericType" , "eType" : "ecore:EClass ecore.ecore#//EGenericType" , "volatile" : "true" , "unsettable" : "true" , "containment" : "true" , "resolveProxies" : "false" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EStringToStringMapEntry" , "instanceClassName" : "java.util.Map$Entry"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EAttribute" , "name" : "key" , "eType" : "ecore:EDataType ecore.ecore#//EString" }
+,{ "xsi:type" : "ecore:EAttribute" , "name" : "value" , "eType" : "ecore:EDataType ecore.ecore#//EString" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "EGenericType"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EReference" , "name" : "eUpperBound" , "eType" : "ecore:EClass ecore.ecore#//EGenericType" , "containment" : "true" , "resolveProxies" : "false" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eTypeArguments" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EGenericType" , "containment" : "true" , "resolveProxies" : "false" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eRawType" , "lowerBound" : "1" , "eType" : "ecore:EClass ecore.ecore#//EClassifier" , "changeable" : "false" , "transient" : "true" , "derived" : "true" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eLowerBound" , "eType" : "ecore:EClass ecore.ecore#//EGenericType" , "containment" : "true" , "resolveProxies" : "false" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eTypeParameter" , "eType" : "ecore:EClass ecore.ecore#//ETypeParameter" , "resolveProxies" : "false" }
+,{ "xsi:type" : "ecore:EReference" , "name" : "eClassifier" , "eType" : "ecore:EClass ecore.ecore#//EClassifier" } ]  }
+,{ "xsi:type" : "ecore:EClass" , "name" : "ETypeParameter" , "eSuperTypes" : "ecore.ecore#//ENamedElement"
+,"eStructuralFeatures" : [ { "xsi:type" : "ecore:EReference" , "name" : "eBounds" , "upperBound" : "-1" , "eType" : "ecore:EClass ecore.ecore#//EGenericType" , "containment" : "true" , "resolveProxies" : "false" } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EBigDecimal" , "instanceClassName" : "java.math.BigDecimal"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#decimal" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EBigInteger" , "instanceClassName" : "java.math.BigInteger"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#integer" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EBoolean" , "instanceClassName" : "boolean"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#boolean" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EBooleanObject" , "instanceClassName" : "java.lang.Boolean"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "EBoolean" }
+,{ "key" : "name" , "value" : "EBoolean:Object" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EByte" , "instanceClassName" : "byte"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#byte" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EByteArray" , "instanceClassName" : "byte[]"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#hexBinary" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EByteObject" , "instanceClassName" : "java.lang.Byte"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "EByte" }
+,{ "key" : "name" , "value" : "EByte:Object" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EChar" , "instanceClassName" : "char" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "ECharacterObject" , "instanceClassName" : "java.lang.Character"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "EChar" }
+,{ "key" : "name" , "value" : "EChar:Object" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EDate" , "instanceClassName" : "java.util.Date" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EDiagnosticChain" , "instanceClassName" : "org.eclipse.emf.common.util.DiagnosticChain" , "serializable" : "false" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EDouble" , "instanceClassName" : "double"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#double" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EDoubleObject" , "instanceClassName" : "java.lang.Double"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "EDouble" }
+,{ "key" : "name" , "value" : "EDouble:Object" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EEList" , "instanceClassName" : "org.eclipse.emf.common.util.EList" , "serializable" : "false"
+,"eTypeParameters" : [ { "name" : "E" } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EEnumerator" , "instanceClassName" : "org.eclipse.emf.common.util.Enumerator" , "serializable" : "false" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EFeatureMap" , "instanceClassName" : "org.eclipse.emf.ecore.util.FeatureMap" , "serializable" : "false" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EFeatureMapEntry" , "instanceClassName" : "org.eclipse.emf.ecore.util.FeatureMap$Entry" , "serializable" : "false" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EFloat" , "instanceClassName" : "float"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#float" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EFloatObject" , "instanceClassName" : "java.lang.Float"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "EFloat" }
+,{ "key" : "name" , "value" : "EFloat:Object" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EInt" , "instanceClassName" : "int"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#int" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EIntegerObject" , "instanceClassName" : "java.lang.Integer"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "EInt" }
+,{ "key" : "name" , "value" : "EInt:Object" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EJavaClass" , "instanceClassName" : "java.lang.Class"
+,"eTypeParameters" : [ { "name" : "T" } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EJavaObject" , "instanceClassName" : "java.lang.Object" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "ELong" , "instanceClassName" : "long"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#long" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "ELongObject" , "instanceClassName" : "java.lang.Long"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "ELong" }
+,{ "key" : "name" , "value" : "ELong:Object" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EMap" , "instanceClassName" : "java.util.Map" , "serializable" : "false"
+,"eTypeParameters" : [ { "name" : "K" }
+,{ "name" : "V" } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EResource" , "instanceClassName" : "org.eclipse.emf.ecore.resource.Resource" , "serializable" : "false" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EResourceSet" , "instanceClassName" : "org.eclipse.emf.ecore.resource.ResourceSet" , "serializable" : "false" }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EShort" , "instanceClassName" : "short"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#short" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EShortObject" , "instanceClassName" : "java.lang.Short"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "EShort" }
+,{ "key" : "name" , "value" : "EShort:Object" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EString" , "instanceClassName" : "java.lang.String"
+,"eAnnotations" : [ { "source" : "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+,"details" : [ { "key" : "baseType" , "value" : "http://www.w3.org/2001/XMLSchema#string" } ]  } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "ETreeIterator" , "instanceClassName" : "org.eclipse.emf.common.util.TreeIterator" , "serializable" : "false"
+,"eTypeParameters" : [ { "name" : "E" } ]  }
+,{ "xsi:type" : "ecore:EDataType" , "name" : "EInvocationTargetException" , "instanceClassName" : "java.lang.reflect.InvocationTargetException" , "serializable" : "false" } ]  }

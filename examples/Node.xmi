@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<es.um.emf.test.tree:Node xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:es.um.emf.test.tree="urn:es.um.emf.test.tree" xsi:schemaLocation="urn:es.um.emf.test.tree Tree.ecore" label="Root">
+  <children label="A">
+    <children label="X"/>
+  </children>
+  <children label="B">
+    <children label="Y"/>
+  </children>
+</es.um.emf.test.tree:Node>

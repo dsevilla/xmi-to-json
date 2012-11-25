@@ -1,0 +1,234 @@
+<es.um.sisdist.weblang:WLProgram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:es.um.sisdist.weblang="http://weblang/1.0" xsi:schemaLocation="http://weblang/1.0 weblang.ecore">
+  <functions name="add1" type="number">
+    <arguments name="v" type="number"/>
+    <body>
+      <statements xsi:type="es.um.sisdist.weblang:ReturnStatement">
+        <expr xsi:type="es.um.sisdist.weblang:BinOpExpr" op="+">
+          <left xsi:type="es.um.sisdist.weblang:VarAccess" name="v"/>
+          <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+        </expr>
+      </statements>
+    </body>
+  </functions>
+  <functions name="pi" type="number">
+    <body>
+      <statements xsi:type="es.um.sisdist.weblang:ReturnStatement">
+        <expr xsi:type="es.um.sisdist.weblang:NumberValue" value="3.1415926"/>
+      </statements>
+    </body>
+  </functions>
+  <functions name="fact" type="number">
+    <arguments name="n" type="number"/>
+    <body>
+      <statements xsi:type="es.um.sisdist.weblang:IfStatement">
+        <test xsi:type="es.um.sisdist.weblang:BinOpExpr" op="||">
+          <left xsi:type="es.um.sisdist.weblang:BinOpExpr" op="==">
+            <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+            <right xsi:type="es.um.sisdist.weblang:NumberValue" value="0"/>
+          </left>
+          <right xsi:type="es.um.sisdist.weblang:BinOpExpr" op="==">
+            <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+            <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+          </right>
+        </test>
+        <true_block>
+          <statements xsi:type="es.um.sisdist.weblang:ReturnStatement">
+            <expr xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+          </statements>
+        </true_block>
+        <false_block>
+          <statements xsi:type="es.um.sisdist.weblang:ReturnStatement">
+            <expr xsi:type="es.um.sisdist.weblang:BinOpExpr" op="*">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:FunCall" fname="fact">
+                <parameter_values xsi:type="es.um.sisdist.weblang:BinOpExpr" op="-">
+                  <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+                  <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+                </parameter_values>
+              </right>
+            </expr>
+          </statements>
+        </false_block>
+      </statements>
+    </body>
+  </functions>
+  <functions name="it_fact" type="number">
+    <arguments name="n" type="number"/>
+    <body>
+      <definitions name="fact" type="number"/>
+      <statements xsi:type="es.um.sisdist.weblang:Assignment">
+        <variable name="fact"/>
+        <expr xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:WhileStatement">
+        <test xsi:type="es.um.sisdist.weblang:BinOpExpr" op="&gt;">
+          <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+          <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+        </test>
+        <body>
+          <statements xsi:type="es.um.sisdist.weblang:Assignment">
+            <variable name="fact"/>
+            <expr xsi:type="es.um.sisdist.weblang:BinOpExpr" op="*">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:VarAccess" name="fact"/>
+            </expr>
+          </statements>
+          <statements xsi:type="es.um.sisdist.weblang:Assignment">
+            <variable name="n"/>
+            <expr xsi:type="es.um.sisdist.weblang:BinOpExpr" op="-">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+            </expr>
+          </statements>
+        </body>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:ReturnStatement">
+        <expr xsi:type="es.um.sisdist.weblang:VarAccess" name="fact"/>
+      </statements>
+    </body>
+  </functions>
+  <functions name="it_fact2" type="number">
+    <arguments name="n" type="number"/>
+    <body>
+      <definitions name="fact" type="number"/>
+      <statements xsi:type="es.um.sisdist.weblang:Assignment">
+        <variable name="fact"/>
+        <expr xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:WhileStatement">
+        <test xsi:type="es.um.sisdist.weblang:BooleanValue" value="true"/>
+        <body>
+          <statements xsi:type="es.um.sisdist.weblang:IfStatement">
+            <test xsi:type="es.um.sisdist.weblang:BinOpExpr" op="&lt;=">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+            </test>
+            <true_block>
+              <statements xsi:type="es.um.sisdist.weblang:BreakStatement"/>
+            </true_block>
+          </statements>
+          <statements xsi:type="es.um.sisdist.weblang:Assignment">
+            <variable name="fact"/>
+            <expr xsi:type="es.um.sisdist.weblang:BinOpExpr" op="*">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:VarAccess" name="fact"/>
+            </expr>
+          </statements>
+          <statements xsi:type="es.um.sisdist.weblang:Assignment">
+            <variable name="n"/>
+            <expr xsi:type="es.um.sisdist.weblang:BinOpExpr" op="-">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+            </expr>
+          </statements>
+        </body>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:ReturnStatement">
+        <expr xsi:type="es.um.sisdist.weblang:VarAccess" name="fact"/>
+      </statements>
+    </body>
+  </functions>
+  <functions name="it_fact3" type="number">
+    <arguments name="n" type="number"/>
+    <body>
+      <definitions name="fact" type="number"/>
+      <statements xsi:type="es.um.sisdist.weblang:Assignment">
+        <variable name="fact"/>
+        <expr xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:WhileStatement">
+        <test xsi:type="es.um.sisdist.weblang:BooleanValue" value="true"/>
+        <body>
+          <statements xsi:type="es.um.sisdist.weblang:IfStatement">
+            <test xsi:type="es.um.sisdist.weblang:BinOpExpr" op="&lt;=">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+            </test>
+            <true_block>
+              <statements xsi:type="es.um.sisdist.weblang:ReturnStatement">
+                <expr xsi:type="es.um.sisdist.weblang:VarAccess" name="fact"/>
+              </statements>
+            </true_block>
+          </statements>
+          <statements xsi:type="es.um.sisdist.weblang:Assignment">
+            <variable name="fact"/>
+            <expr xsi:type="es.um.sisdist.weblang:BinOpExpr" op="*">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:VarAccess" name="fact"/>
+            </expr>
+          </statements>
+          <statements xsi:type="es.um.sisdist.weblang:Assignment">
+            <variable name="n"/>
+            <expr xsi:type="es.um.sisdist.weblang:BinOpExpr" op="-">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="n"/>
+              <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+            </expr>
+          </statements>
+        </body>
+      </statements>
+    </body>
+  </functions>
+  <functions name="main" type="void">
+    <body>
+      <definitions name="x" type="number"/>
+      <statements xsi:type="es.um.sisdist.weblang:Assignment">
+        <variable name="x"/>
+        <expr xsi:type="es.um.sisdist.weblang:NumberValue" value="5"/>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:FunCall" fname="println">
+        <parameter_values xsi:type="es.um.sisdist.weblang:FunCall" fname="pi"/>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:FunCall" fname="println">
+        <parameter_values xsi:type="es.um.sisdist.weblang:FunCall" fname="add1">
+          <parameter_values xsi:type="es.um.sisdist.weblang:NumberValue" value="2"/>
+        </parameter_values>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:FunCall" fname="println">
+        <parameter_values xsi:type="es.um.sisdist.weblang:FunCall" fname="add1">
+          <parameter_values xsi:type="es.um.sisdist.weblang:VarAccess" name="x"/>
+        </parameter_values>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:FunCall" fname="println">
+        <parameter_values xsi:type="es.um.sisdist.weblang:StringValue" value="Factorials of 5:"/>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:FunCall" fname="println">
+        <parameter_values xsi:type="es.um.sisdist.weblang:FunCall" fname="fact">
+          <parameter_values xsi:type="es.um.sisdist.weblang:NumberValue" value="5"/>
+        </parameter_values>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:FunCall" fname="println">
+        <parameter_values xsi:type="es.um.sisdist.weblang:FunCall" fname="it_fact">
+          <parameter_values xsi:type="es.um.sisdist.weblang:NumberValue" value="5"/>
+        </parameter_values>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:FunCall" fname="println">
+        <parameter_values xsi:type="es.um.sisdist.weblang:FunCall" fname="it_fact2">
+          <parameter_values xsi:type="es.um.sisdist.weblang:NumberValue" value="5"/>
+        </parameter_values>
+      </statements>
+      <statements xsi:type="es.um.sisdist.weblang:FunCall" fname="println">
+        <parameter_values xsi:type="es.um.sisdist.weblang:FunCall" fname="it_fact3">
+          <parameter_values xsi:type="es.um.sisdist.weblang:BinOpExpr" op="+">
+            <left xsi:type="es.um.sisdist.weblang:BinOpExpr" op="-">
+              <left xsi:type="es.um.sisdist.weblang:VarAccess" name="x"/>
+              <right xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+            </left>
+            <right xsi:type="es.um.sisdist.weblang:BinOpExpr" op="*">
+              <left xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+              <right xsi:type="es.um.sisdist.weblang:BinOpExpr" op="/">
+                <left xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+                <right xsi:type="es.um.sisdist.weblang:BinOpExpr" op="*">
+                  <left xsi:type="es.um.sisdist.weblang:NumberValue" value="1"/>
+                  <right xsi:type="es.um.sisdist.weblang:BinOpExpr" op="/">
+                    <left xsi:type="es.um.sisdist.weblang:NumberValue" value="2"/>
+                    <right xsi:type="es.um.sisdist.weblang:NumberValue" value="2"/>
+                  </right>
+                </right>
+              </right>
+            </right>
+          </parameter_values>
+        </parameter_values>
+      </statements>
+    </body>
+  </functions>
+</es.um.sisdist.weblang:WLProgram>
