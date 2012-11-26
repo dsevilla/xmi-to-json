@@ -14,7 +14,9 @@
 
 The json package can be used to build an AST for it. It assumes
 that there is only one root. I'll check that afterwards."
-  (xj--json-print-internal (car xml))) ;; only one root
+  (insert ?\{ ?\  ?\" (symbol-name (caar xml)) ?\" ?\  ?: ?\  )
+  (xj--json-print-internal (car xml)) ;; only one root
+  (insert ?\  ?}))
 
 (defun xj--print-attributes (xml)
   (let ((attrs (xml-node-attributes xml)))
