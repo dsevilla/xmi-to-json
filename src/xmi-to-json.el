@@ -6,8 +6,6 @@
 (eval-when-compile
   (require 'cl))
 (require 'xml)
-(when (> emacs-major-version 23)
-  (require 'ert))
 
 (defun xj-json-print (xml)
   "Prints the XML s-exp (as returned by `xml-parse-file') as a JSON string.
@@ -28,8 +26,14 @@ that there is only one root. I'll check that afterwards."
         (insert ?\  ?\, ?\  )))))
 
 (defun xj-walk (path xml)
-  "Walk an XMI tree and return the element named by PATH. PATH will be /x/y/z."
-  (xj--walk (split-string path "/" t) (car xml)))
+  "Walk an XMI tree and return the element named by PATH.
+
+ PATH will be either a string /x/y/z or a list."
+  (xj--walk
+   (if (stringp path)
+       (split-string path "/" t)
+     path)
+   (car xml)))
 
 (defun xj--walk (path xml)
   (if (null path)
@@ -132,7 +136,7 @@ that there is only one root. I'll check that afterwards."
     ;; End of an object
     (insert ?\  ?} ?\  )))
 
-(when (> emacs-major-version 23)
+(when (require 'ert nil t)
   (defmacro xj-ert-deftest (name &rest opt-docstring-body)
     (declare (indent 2)
              (doc-string 3))
