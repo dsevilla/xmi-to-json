@@ -44,11 +44,11 @@ that there is only one root. I'll check that afterwards."
         ;; Else, we reached the end of the path,
         ;; so return the complete collection
         (insert ?\[ ?\  )
-        (xj--json-print-one (pop collection))
+        (xj--json-print-one (car collection))
         (mapc #'(lambda (e)
                   (insert ?\n ?, ?\  )
                   (xj--json-print-one e))
-              collection)
+              (cdr collection))
         (insert ?\  ?\])))))
 
 (defun xj--json-print-one (xml)
