@@ -31,7 +31,7 @@
       (setq json (with-temp-buffer
                    (xj-walk (cdr elements) xml)
                    (buffer-substring-no-properties (point-min) (point-max)))))
-    (if json
+    (if (not (string-equal ""  json))
         (progn
           (elnode-http-start httpcon 200 '("Content-type" . "application/json"))
           (elnode-http-return httpcon json))
