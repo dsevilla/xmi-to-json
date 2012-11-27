@@ -6,6 +6,7 @@
 (eval-when-compile
   (require 'cl))
 (require 'xmi-to-json)
+(require 'elnode)
 
 (defvar *xjrs--model-mapping* (make-hash-table)
   "Holds the map between the symbol defining this model and the XML s-exp serving it.")
