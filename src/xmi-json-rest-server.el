@@ -10,9 +10,9 @@
 (defvar *xjrs--model-mapping* (make-hash-table)
   "Holds the map between the symbol defining this model and the XML s-exp serving it.")
 
-(defun xjrs-add-mapping (sym xmi)
+(defun xjrs-add-mapping (xmi)
   "Adds a mapping between a symbol (the root of a model) and an XML s-exp."
-  (puthash sym xmi *xjrs--model-mapping*))
+  (puthash (caar xmi) xmi *xjrs--model-mapping*))
 
 (defun xjrs-del-mapping (sym)
   (remhash sym *xjrs--model-mapping*))
@@ -27,12 +27,14 @@
     (when elements
       (setq sym (intern (car elements)))
       (setq xml (gethash sym *xjrs--model-mapping*))
-      (setq json (xj-walk (cdr elements) xml)))
+      (setq json (with-temp-buffer
+                   (xj-walk (cdr elements) xml)
+                   (buffer-substring-no-properties (point-min) (point-max)))))
     (if json
         (progn
           (elnode-http-start httpcon 200 '("Content-type" . "application/json"))
           (elnode-http-return httpcon json))
-      (elnode-send-404 "Model or node not found!"))))
+      (elnode-send-404 httpcon "Model or node not found!"))))
 
 (defun xjrs--root-handler (httpcon)
   (elnode-hostpath-dispatcher httpcon *xjrs--app-routes*))
