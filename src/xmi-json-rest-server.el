@@ -11,9 +11,9 @@
 (defvar *xjrs--model-mapping* (make-hash-table)
   "Holds the map between the symbol defining this model and the XML s-exp serving it.")
 
-(defun xjrs-add-mapping (xmi)
+(defun xjrs-add-mapping (id xmi)
   "Adds a mapping between a symbol (the root of a model) and an XML s-exp."
-  (puthash (caar xmi) xmi *xjrs--model-mapping*))
+  (puthash id xmi *xjrs--model-mapping*))
 
 (defun xjrs-del-mapping (sym)
   (remhash sym *xjrs--model-mapping*))
